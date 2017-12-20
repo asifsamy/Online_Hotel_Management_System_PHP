@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Online Hotel Management System</title>
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/datepicker.css" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+  <script>
+    $(function(){
+      $('.datepicker').datepicker();
+    });
+  </script>
+  <style>
+    /* Remove the navbar's default rounded borders and increase the bottom margin */ 
+    .navbar {
+      margin-bottom: 50px;
+      border-radius: 0;
+    }
+    
+    /* Remove the jumbotron's default bottom margin */ 
+     .jumbotron {
+      margin-bottom: 10px;
+      padding-bottom: 0px;
+      background-color: #e6f5ff
+    }
+   
+    /* Add a background color and some padding to the footer */
+    footer {
+      background-color: #b3e0ff;
+      padding: 25px;
+    }
+    .peopleCarouselImg img {
+      width: 1180px;
+      height: 400px;
+      max-height: 400px;
+   }
+   p{
+    font-size: 17px;font-family: Arial, Helvetica, sans-serif;
+   }
+  </style>
+</head>
+<body>
+
+<div class="container text-center">
+     <h1 style="color: #0000cc">Online Hotel Mangement System</h1>
+</div>
+
+<div class="jumbotron">
+  <div class="container text-center">
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+        <!-- Carousel indicators -->
+        <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+            <li data-target="#myCarousel" data-slide-to="2"></li>
+        </ol>   
+        <!-- Wrapper for carousel items -->
+        <div class="carousel-inner" role="listbox">
+            <div class="item peopleCarouselImg active">
+              
+                <img class="peopleCarouselImg" src="image/front5.jpg" alt="First Slide">
+            </div>
+            <div class="item peopleCarouselImg" style="background-image:image/nfront2.jpg">
+              
+                <img class="peopleCarouselImg" src="image/nfront2.jpg" alt="Second Slide">
+            </div>
+            <div class="item peopleCarouselImg">
+                
+          
+                <img class="peopleCarouselImg" src="image/nfront.jpg" alt="Third Slide">
+            </div>
+        </div>
+    </div>
+
+    <nav class="navbar navbar-inverse" style="width: 1140px; margin-left: 0px">
+      <div class="container-fluid">
+         <div class="navbar-header">
+           <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>                        
+           </button>
+          </div>
+         <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav">
+              <li class="active"><a href="index.html"><span class="glyphicon glyphicon-home"></span> Home</a></li>
+              <li><a href="rooms.php">Rooms & Suites</a></li>
+              <li><a href="#">Rstuarent</a></li>
+              <li><a href="events.php">Events</a></li>
+              <li><a href="user.php">User</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="admin.php"><span class="glyphicon glyphicon-user"></span> Admin Login</a></li>
+              <li><a href="contact.php"><span class="glyphicon glyphicon-map-marker"></span> Contact</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav> 
+      
+  </div>
+</div>
+
+
+<div class="container text-center">
+  <div class="row">
+     <div class="col-sm-12">
+       <!-- <font style="color: #0000cc; font-size: 30px;">Make a resrvation</font> -->
+        <form class="form-inline" name="res" action="reservation.php" method="post">     
+          <div class="form-group">           
+            <input type="text" id="chkin" name="chkin" class="datepicker" value="" placeholder="Check In" data-date-format="yyyy-mm-dd" required />         
+          </div>  
+
+          <div class="form-group">           
+            <input type="text" id="chkout" name="chkout" class="datepicker" value="" placeholder="Check Out" data-date-format="yyyy-mm-dd" required />          
+          </div>
+          
+          <div class="form-group">          
+            <select id="room_t" name="room_t" class="form-control" style="padding-left:3px;" required />
+              <option>Room Type</option>
+              <option value="Regular">Regular</option>
+              <option value="Deluxe">Deluxe</option>
+              <option value="Suite">Suite</option>        
+            </select>         
+          </div> 
+
+          <div class="form-group">          
+            <select id="room_n" name="room_n" class="form-control" style="padding-left:3px;" required />
+              <option>No. of Room</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>         
+            </select>         
+          </div>
+                    
+          <div class="form-group">            
+            <select id="guest_n" name="guest_n" class="form-control" required />
+              <option>Guest</option>  
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+              <option value="10">10</option>
+              <option value="10+">10+</option>      
+            </select>         
+          </div>
+                  
+          <button class="btn btn-info" type="submit">CHECK AVAILABILITY <font style="color: #0000cc; font-size: 15px"></font></button>
+        </form> 
+
+     </div>    
+  </div> 
+</div>
+
+
+<div class="container">    
+  <div class="row">
+
+    <div class="col-sm-6">
+       <h1><font style= "font-family: Lucida Console, Monaco, monospace">Welcome to </font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+       <font style="color: #0000cc; font-size: 37px;">Our Hotel Management System</font></h1><p>&nbsp;</p>
+    </div>
+    <div class="col-sm-11">
+       <p style="font-size: 17px;font-family: Arial, Helvetica, sans-serif">Welcome to OUR HOTEL where business and leisure blend together. Enjoying an unrivalled location, overlooking the Bay of Bengal (only 25 yards from the Bay water) and sitting in the laps of hills, we offer deluxe accommodation in 181 well appointed guest rooms and suites. The panoramic view of the ocean, the majestic hills and the natural beauty of the tamarisk trees are all wonderfully complemented by luxury facilities and Bangladeshi hospitality. - <font style="color: #0000cc">See more at: http://www.facebook.com</font></p><p>&nbsp;</p><p>&nbsp;</p>
+    </div>
+    
+    <div class="col-sm-12">
+      <h1 style="font-family: Courier New, Courier, monospace">Rooms &amp; Suites</h1>
+      <hr style="color: #000000; border-width: 3px;">
+    </div>
+
+    <div class="col-sm-4">
+      <div class="panel panel-primary">
+        <div class="panel-heading"><font style="font-size: 20px;">REGULAR ROOM</font></div>
+        <div class="panel-body"><a href="rooms.php"><img src="image/reg.jpg" class="img-responsive" style="width:100%" alt="Image"></a> </div>
+        <div class="panel-footer">Start from $65++ or BDT 5,059++</div>
+      </div>
+    </div>
+    <div class="col-sm-4"> 
+      <div class="panel panel-primary">
+        <div class="panel-heading"><font style="font-size: 20px;">DELUXE ROOM</font></div>
+        <div class="panel-body"><a href="rooms.php"><img src="image/del.jpg" class="img-responsive" style="width:100%" alt="Image"></a></div>
+        <div class="panel-footer">Start from $80++ or BDT 6,245++</div>
+      </div>
+    </div>
+    <div class="col-sm-4"> 
+      <div class="panel panel-primary">
+        <div class="panel-heading"><font style="font-size: 20px;">SUITE</font></div>
+        <div class="panel-body"><a href="rooms.php"><img src="image/suit.jpg" class="img-responsive" style="width:100%" alt="Image"></a></div>
+        <div class="panel-footer">Start from $172++ or BDT 13,950++</div>
+      </div>
+    </div>
+  </div><br><br><br>
+
+  <div class="row">
+    <div class="col-sm-12">
+    <h1 style="font-family: Courier New, Courier, monospace">Hotel Facilities</h1>
+    <hr style="color: #000000; border-width: 3px;">
+  </div>
+    <div class="col-sm-6"> 
+      <ul>
+        <li><p>Central air conditioning</p></li>
+        <li><p>Hot &amp; cold water</p></li>
+        <li><p>Cable television with over 84 channels </p></li>
+        <li><p>Comfortable working desk with table lamp </p></li>
+        <li><p>High Speed Internet access </p></li>
+        <li><p>In room safe (suite only)</p></li>
+        <li><p>Doctor on call</p></li>
+        <li><p>24 hours room services</p></li>
+        <li><p>Conference and Banquet facility</p></li>
+        <li><p>Airport transfer</p></li>
+      </ul>
+    </div>
+
+    <div class="col-sm-6">
+      <ul>
+        <li><p>Mini bar</p></li>
+        <li><p>Business Centre</p></li>
+        <li><p>Free parking</p></li>
+        <li><p>IDD Telephone</p></li>
+        <li><p>Hairdresser</p></li>
+        <li><p>Fitness centre</p></li>
+        <li><p>Shopping Arcade</p></li>
+        <li><p>Hot Spa &amp; Massage</p></li>
+        <li><p>Swimming pool</p></li>
+        <li><p>Cyber Cafe</p></li>                                 
+      </ul>
+    </div>
+
+  </div>
+
+</div><br><br>
+
+<footer class="container-fluid text-center">
+  <p>Online Management Copyright</p>  
+  <form class="form-inline">Get deals:
+    <input type="email" class="form-control" size="50" placeholder="Email Address">
+    <button type="button" class="btn btn-danger">Sign Up</button>
+  </form>
+</footer>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/bootstrap-datepicker.js"></script>
+  </body>
+</html>
